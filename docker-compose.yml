@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    image: ${DOCKER_PROD_REPO}:${BUILD_NUMBER}
+    ports:
+      - "8085:80"
+    environment:
+      - NODE_ENV=development
+    command: ["npm", "start"]
+
